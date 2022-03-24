@@ -1,0 +1,178 @@
+/* Inter-Regular */
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Inter-Regular"),
+    url(./fonts/Inter-Regular.woff2) format("woff2"),
+    url(./fonts/Inter-Regular.woff) format("woff");
+}
+
+/* Inter-Medium */
+
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: local("Inter-Medium"),
+      url(./fonts/Inter-Medium.woff2) format("woff2"),
+      url(./fonts/Inter-Medium.woff) format("woff");
+  }
+
+  /* Inter-Black */
+
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: local("Inter-Black"),
+      url(./fonts/Inter-Black.woff2) format("woff2"),
+      url(./fonts/Inter-Black.woff) format("woff");
+  }
+
+.body {
+background-color: rgba(0, 0, 0, 1);
+}
+
+.page {
+    margin: 0 auto;
+    padding: 45px 200px 60px;
+    max-width: 1280px;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    color: #FFFFFF;
+    overflow: hidden scroll;
+}
+
+.header {
+  min-height: 74px;
+  border-bottom: rgba(84, 84, 84, 0.7);
+  margin-bottom: 36px;
+}
+
+.profile {
+  max-width: 880px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile__info{
+margin-left: 30px;
+}
+
+.profile__avatar {
+  background-image: url(./images/mesto_avatar.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-size: cover;
+}
+
+.profile__name {
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 48px;
+  margin: 0;
+}
+
+.profile__activity {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  margin: 16px 0 0;
+}
+
+.edit-button {
+  background-image: url(./images/edit-button.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 1);
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  opacity: 0.6;
+}
+
+.add-button {
+  background-image: url(./images/add-button.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 1);
+  width: 150px;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  cursor: pointer;
+}
+
+.add-button:hover {
+  opacity: 0.6;
+}
+
+.elements {
+  max-width: 880px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+  grid-template-rows: 1fr 1fr;
+  column-gap: 17px;
+  row-gap: 20px;
+  margin: 75px 0 0;
+  box-sizing: border-box;
+}
+
+.element {
+  max-width: 282px;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  background-size: 282px 361px;
+  border-radius: 10px;
+}
+
+.element__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 21px 0 15px;
+}
+
+.element__image {
+  width: 100%;
+  object-fit: cover;
+}
+
+.element__name {
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  color: rgba(0, 0, 0, 1);
+
+}
+
+.like-button {
+  width: 22px;
+  height: 19px;
+  background-position: center;
+  background-color: #FFFFFF;
+  border: none;
+  background-image: url(./images/like-button.svg);
+}
+
+.footer__copyright {
+  color: rgba(84, 84, 84, 1);
+}
