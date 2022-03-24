@@ -50,9 +50,22 @@ background-color: rgba(0, 0, 0, 1);
     -moz-text-size-adjust: 100%;
     color: #FFFFFF;
 }
+
+@media (max-width: 767px) {
+  .page {
+    padding: 28px 0 36px;
+  }
+}
+
 .content {
   max-width: 880px;
   margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .content {
+    padding: 0 19px;
+  }
 }
 
 .header {
@@ -63,12 +76,17 @@ background-color: rgba(0, 0, 0, 1);
 }
 
 .profile {
-  max-width: 880px;
   margin: 0 auto;
   padding: 0;
   display: flex;
   align-items: center;
-  position: relative;
+}
+
+@media (max-width: 767px) {
+  .profile {
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .profile__info{
@@ -90,6 +108,7 @@ margin-left: 30px;
   font-size: 42px;
   line-height: 48px;
   margin: 0;
+  display: flex;
 }
 
 .profile__activity {
@@ -103,12 +122,13 @@ margin-left: 30px;
   background-image: url(./images/edit-button.svg);
   background-repeat: no-repeat;
   background-position: center;
-  background-color: rgba(0, 0, 0, 1);
+  background-color: transparent;
   width: 24px;
   height: 24px;
   border: 1px solid rgba(255, 255, 255, 1);
   cursor: pointer;
   margin-left: 18px;
+  align-self: center;
 }
 
 .edit-button:hover {
@@ -119,18 +139,25 @@ margin-left: 30px;
   background-image: url(./images/add-button.svg);
   background-repeat: no-repeat;
   background-position: center;
-  background-color: rgba(0, 0, 0, 1);
+  background-color: transparent;
   width: 150px;
   height: 50px;
-  border: 1px solid rgba(255, 255, 255, 1);
+  border: 2px solid rgba(255, 255, 255, 1);
   cursor: pointer;
-  position: absolute;
-  right: 0;
+  margin-left: auto;
+}
+
+@media (max-width: 767px) {
+  .add-button {
+  margin-left: 0;
+  width: 282px;
+  }
 }
 
 .add-button:hover {
   opacity: 0.6;
 }
+
 
 .elements {
   display: grid;
@@ -168,14 +195,16 @@ margin-left: 30px;
   font-size: 24px;
   line-height: 29px;
   color: rgba(0, 0, 0, 1);
-
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .like-button {
   width: 22px;
   height: 19px;
   background-position: center;
-  background-color: #FFFFFF;
+  background-color: transparent;
   border: none;
   background-image: url(./images/like-button.svg);
   cursor: pointer;
