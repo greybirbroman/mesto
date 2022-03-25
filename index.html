@@ -12,10 +12,10 @@
 
 <body class="body">
   <div class="page">
+    <header class="header">
+      <img class="header__logo" src="./images/mesto_logo.svg" alt="Лого Место">
+    </header>
     <main class="content">
-      <header class="header">
-        <img class="header__logo" src="./images/mesto_logo.svg" alt="Лого Место">
-      </header>
       <section class="profile">
         <div class="profile__avatar"></div>
         <div class="profile__info">
@@ -32,51 +32,62 @@
           <img class="element__image" src="./images/mesto_place_karach.jpg">
           <div class="element__container">
             <p class="element__name">Карачаевск</p>
-            <button class="like-button"></button>
+            <button class="like-button like-button_is-active"></button>
           </div>
         </article>
         <article class="element">
           <img class="element__image" src="./images/mesto_place_elbrus.jpg">
           <div class="element__container">
             <p class="element__name">Гора Эльбрус</p>
-            <button class="like-button" type="button"></button>
+            <button class="like-button like-button_is-active" type="button"></button>
           </div>
         </article>
         <article class="element">
           <img class="element__image" src="./images/mesto_place_dombay.jpg">
           <div class="element__container">
             <p class="element__name">Домбай</p>
-            <button class="like-button"></button>
+            <button class="like-button like-button_is-active"></button>
           </div>
         </article>
         <article class="element">
           <img class="element__image" src="./images/mesto_place_elbrus.jpg">
           <div class="element__container">
             <p class="element__name">Гора Эльбрус</p>
-            <button class="like-button" type="button"></button>
+            <button class="like-button like-button_is-active" type="button"></button>
           </div>
         </article>
         <article class="element">
           <img class="element__image" src="./images/mesto_place_dombay.jpg">
           <div class="element__container">
             <p class="element__name">Домбай</p>
-            <button class="like-button" type="button"></button>
+            <button class="like-button like-button_is-active" type="button"></button>
           </div>
         </article>
         <article class="element">
           <img class="element__image" src="./images/mesto_place_karach.jpg">
           <div class="element__container">
             <p class="element__name">Карачаево - Черкессия</p>
-            <button class="like-button"></button>
+            <button class="like-button "></button>
           </div>
         </article>
       </section>
       <footer class="footer">
-        <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
+        <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
       </footer>
+      <div class="popap popap_is-active">
+        <div class="popap__container">
+          <button class="popap__close" type="button"></button>
+          <div class="popap__content">
+            <h3 class="popap__profile">Редактировать профиль</h3>
+            <input type="text" placeholder="Жак-Ив Кусто" class="popap__name"></input>
+            <input type="text" placeholder="Исследователь океана" class="popap__activity"></input>
+            <button class="popap__save-button" type="submit">Сохранить</button>
+          </div>
+        </div>
+      </div>
     </main>
   </div>
-
 </body>
+<script src="script.js"></script>
 
 </html>
