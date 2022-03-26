@@ -92,6 +92,7 @@
   .header {
     margin: 0 auto 36px;
     max-width: 320px;
+    max-height: 56px;
   }
 }
 
@@ -114,6 +115,7 @@
   padding: 0;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 767px) {
@@ -147,7 +149,9 @@
   font-weight: 500;
   font-size: 42px;
   line-height: 48px;
+  text-align: center;
   margin: 0 auto;
+  padding: 0;
   display: flex;
 }
 
@@ -158,14 +162,21 @@
     margin: 22px auto 0;
     font-size: 27px;
     line-height: 32px;
-    text-align: center;
   }
+}
+
+.profile__container {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 .profile__activity {
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
+  text-align: center;
   margin: 5px 0 0;
 }
 
@@ -234,20 +245,32 @@
   padding: 0;
 }
 
+@media (max-width: 1023px) {
+  .elements {
+    padding: 0 60px;
+  }
+}
+
 @media (max-width: 767px) {
   .elements {
     margin: 36px auto 0;
     line-height: 0;
+    padding: 0;
   }
 }
 
 .element {
   margin: 0 auto;
   max-width: 282px;
-  object-fit: cover;
   background-color: #FFFFFF;
-  background-size: 282px 361px;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.element__name-container {
+  max-width: 200px;
 }
 
 .element__container {
@@ -269,12 +292,11 @@
   font-size: 24px;
   line-height: 29, 05px;
   color: rgba(0, 0, 0, 1);
-  text-align: center;
-  padding: 0;
+  margin: 0;
+  padding: 25px 0 31px 0;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  margin: 25px 0 31px 0;
 }
 
 .like-button {
@@ -291,7 +313,14 @@
 .like-button:hover {
   opacity: 0.6;
 }
-  
+
+.like-button_is-active {
+  display: none;
+  background: url(./images/like-button_active.svg) no-repeat center;
+  border: none;
+  cursor: pointer;
+}
+
 .footer {
   margin: 71px auto 0;
   padding: 0;
@@ -336,6 +365,8 @@
 @media (max-width: 767px) {
   .popap__container {
     max-width: 282px;
+    min-height: 322px;
+    margin: 75px auto 0;
   }
 }
 
@@ -345,6 +376,15 @@
   line-height: 29px;
   margin: 0 0 54px;
   padding: 0;
+}
+
+@media (max-width: 767px) {
+  .popap__profile {
+    font-size: 18px;
+    line-height: 22px;
+    max-width: 282px;
+    margin: 0 0 75px;
+  }
 }
 
 .popap__content {
@@ -363,8 +403,10 @@
 @media (max-width: 767px) {
   .popap__content {
     max-width: 282px;
-    max-height: 322px;
-    margin: 123px auto 0;
+    width: 100%;
+    min-height: 322px;
+    margin: 38px 0 0;
+    padding: 25px 22px;
   }
 }
 
@@ -381,6 +423,14 @@
   right: 0;
 }
 
+@media (max-width: 767px) {
+  .popap__close {
+  background: transparent url(./images/popap_close_small.svg) no-repeat center;
+  width: 20px;
+  height: 20px;
+  }
+}
+
 .popap__close:hover {
   opacity: 0.6;
 }
@@ -389,7 +439,7 @@
   font-size: 14px;
   line-height: 17px;
   padding-bottom: 13px;
-  border-bottom: 1px solid rgba(0, 0, 0, .5)!important;
+  border-bottom: 1px solid rgba(0, 0, 0, .5) !important;
   min-width: 356px;
   margin: 0 0 30px;
   border: none;
@@ -405,7 +455,7 @@
   font-size: 14px;
   line-height: 17px;
   padding-bottom: 13px;
-  border-bottom: 1px solid rgba(0, 0, 0, .5)!important;
+  border-bottom: 1px solid rgba(0, 0, 0, .5) !important;
   min-width: 356px;
   margin: 0 0 48px;
   border: none;
@@ -414,6 +464,7 @@
 @media (max-width: 767px) {
   .popap__activity {
     min-width: 238px;
+    margin: 0 0 45px;
   }
 }
 
@@ -425,6 +476,7 @@
   border: none;
   font-size: 18px;
   line-height: 22px;
+  font-weight: 400;
   text-align: center;
   cursor: pointer;
 }
@@ -432,6 +484,10 @@
 @media (max-width: 767px) {
   .popap__save-button {
     width: 238px;
+    height: 46px;
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 0px;
   }
 }
 

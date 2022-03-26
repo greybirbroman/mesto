@@ -19,9 +19,10 @@
       <section class="profile">
         <div class="profile__avatar"></div>
         <div class="profile__info">
-          <p class="profile__name">Жак-Ив Кусто
-            <button class="edit-button" type="button"></button>
-          </p>
+        <div class="profile__container">
+          <p class="profile__name">Жак-Ив Кусто</p>
+          <button class="edit-button" type="button"></button>
+        </div>
           <p class="profile__activity">Исследователь океана</p>
         </div>
         <button class="add-button" type="button"></button>
@@ -32,42 +33,44 @@
           <img class="element__image" src="./images/mesto_place_karach.jpg">
           <div class="element__container">
             <p class="element__name">Карачаевск</p>
-            <button class="like-button like-button_is-active"></button>
+            <button class="like-button"></button>
           </div>
         </article>
         <article class="element">
           <img class="element__image" src="./images/mesto_place_elbrus.jpg">
           <div class="element__container">
             <p class="element__name">Гора Эльбрус</p>
-            <button class="like-button like-button_is-active" type="button"></button>
+            <button class="like-button" type="button"></button>
           </div>
         </article>
         <article class="element">
           <img class="element__image" src="./images/mesto_place_dombay.jpg">
           <div class="element__container">
             <p class="element__name">Домбай</p>
-            <button class="like-button like-button_is-active"></button>
+            <button class="like-button"></button>
           </div>
         </article>
         <article class="element">
           <img class="element__image" src="./images/mesto_place_elbrus.jpg">
           <div class="element__container">
             <p class="element__name">Гора Эльбрус</p>
-            <button class="like-button like-button_is-active" type="button"></button>
+            <button class="like-button" type="button"></button>
           </div>
         </article>
         <article class="element">
           <img class="element__image" src="./images/mesto_place_dombay.jpg">
           <div class="element__container">
             <p class="element__name">Домбай</p>
-            <button class="like-button like-button_is-active" type="button"></button>
+            <button class="like-button" type="button"></button>
           </div>
         </article>
         <article class="element">
           <img class="element__image" src="./images/mesto_place_karach.jpg">
           <div class="element__container">
-            <p class="element__name">Карачаево - Черкессия</p>
-            <button class="like-button "></button>
+            <div class="element__name-container">
+              <p class="element__name">Карачаево-Черкессия</p>
+            </div>
+            <button class="like-button"></button>
           </div>
         </article>
       </section>
@@ -77,12 +80,13 @@
       <div class="popap popap_is-active">
         <div class="popap__container">
           <button class="popap__close" type="button"></button>
-          <div class="popap__content">
+          <form class="popap__content">
             <h3 class="popap__profile">Редактировать профиль</h3>
-            <input type="text" placeholder="Жак-Ив Кусто" class="popap__name"></input>
-            <input type="text" placeholder="Исследователь океана" class="popap__activity"></input>
-            <button class="popap__save-button" type="submit">Сохранить</button>
-          </div>
+            <input id="name" type="text" value="Жак-Ив Кусто" placeholder="Жак-Ив Кусто" class="popap__name"></input>
+            <input id="job" type="text" value="Исследователь океана" placeholder="Исследователь океана"
+              class="popap__activity"></input>
+            <button id="save" class="popap__save-button" type="submit">Сохранить</button>
+          </form>
         </div>
       </div>
     </main>
