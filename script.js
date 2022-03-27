@@ -1,33 +1,33 @@
-let editButton = document.querySelector('.edit-button');
-let popap = document.querySelector('.popap');
-let popapCloseButton = document.querySelector('.popap__close');
+let editButton = document.querySelector('.profile__edit-button');
+let popup = document.querySelector('.popup');
+let popupCloseButton = document.querySelector('.popup__close');
 
-function openPopap(event) {
-  popap.classList.add('popap_is-active');
+function openPopup(event) {
+  popup.classList.add('popup_open');
 }
 
-editButton.addEventListener('click', openPopap);
-popapCloseButton.addEventListener('click', function() {
-  popap.classList.remove('popap_is-active');
+editButton.addEventListener('click', openPopup);
+popupCloseButton.addEventListener('click', function() {
+  popup.classList.remove('popup_open');
 })
 
-let formElement = document.querySelector('#save').addEventListener('click', formSubmitHandler);
+let formElement = document.querySelector('.popup__form');
 let nameInput = document.querySelector('#name');
 let jobInput = document.querySelector('#job');
 
 function formSubmitHandler (evt) {
   evt.preventDefault();
 
-  nameInput = document.querySelector('#name').value;
-  jobInput = document.querySelector('#job').value;
-  formElement = document.querySelector('#save');
+  document.querySelector(nameInput.value);
+  document.querySelector(jobInput.value);
 
-  console.log(nameInput);
-  console.log(jobInput);
+  document.querySelector('.profile__name').textContent = nameInput.value;
+  document.querySelector('.profile__activity').textContent = jobInput.value;
 
-  document.querySelector('.profile__name').textContent = nameInput;
-  document.querySelector('.profile__activity').textContent = jobInput;
-  popap.classList.remove('popap_is-active');
+  console.log(nameInput.value);
+  console.log(jobInput.value);
+
+  popup.classList.remove('popup_open');
 }
-
 formElement.addEventListener('submit', formSubmitHandler);
+

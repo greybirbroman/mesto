@@ -40,7 +40,7 @@
 
 .page {
   margin: 0 auto;
-  padding: 41px 0 60px;
+  padding: 45px 0 60px;
   max-width: 1280px;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -84,13 +84,13 @@
 
 @media (max-width: 1023px) {
   .header {
-    padding: 0 32px;
+    padding: 0 27px;
   }
 }
 
 @media (max-width: 767px) {
   .header {
-    margin: 0 auto 36px;
+    margin: 0 auto 42px;
     max-width: 320px;
     max-height: 56px;
   }
@@ -114,14 +114,26 @@
   margin: 0 auto;
   padding: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 @media (max-width: 767px) {
   .profile {
     flex-direction: column;
     justify-content: center;
+  }
+}
+
+.profile__avatar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .profile__avatar {
+    gap: 30px;
+    flex-direction: column;
   }
 }
 
@@ -135,117 +147,120 @@
   }
 }
 
-.profile__avatar {
-  background-image: url(./images/mesto_avatar.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  min-width: 120px;
-  min-height: 120px;
+.avatar__image {
+  max-width: 120px;
+  max-height: 120px;
   border-radius: 50%;
-  background-size: cover;
 }
 
 .profile__name {
   font-weight: 500;
   font-size: 42px;
   line-height: 48px;
+  max-height: none;
   text-align: center;
   margin: 0 auto;
   padding: 0;
   display: flex;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media (max-width: 767px) {
   .profile__name {
-    min-width: 189px;
-    min-height: 26px;
-    margin: 22px auto 0;
     font-size: 27px;
     line-height: 32px;
+    margin-left: 27px;
   }
 }
 
 .profile__container {
   display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
+  align-items: center;
+  gap: 18px;
+}
+
+@media (max-width: 767px) {
+  .profile__container {
+    gap: 10px;
+  }
 }
 
 .profile__activity {
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
-  text-align: center;
-  margin: 5px 0 0;
+  margin: 8px 0 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media (max-width: 767px) {
   .profile__activity {
-    margin: 14px 0 36px;
+    margin: 8px 0 32px;
     font-size: 14px;
     line-height: 16.94px;
     text-align: center;
   }
 }
 
-.edit-button {
-  background-image: url(./images/edit-button.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: transparent;
+.profile__edit-button {
+  border: 1px solid rgba(255, 255, 255, 1);
   width: 24px;
   height: 24px;
-  border: 1px solid rgba(255, 255, 255, 1);
+  background: transparent url(./images/edit-button.svg) no-repeat center;
+  background-size: 10px 10px;
   cursor: pointer;
-  margin-left: 18px;
-  align-self: center;
+  transition: opacity .8s ease 0s;
 }
 
 @media (max-width: 767px) {
-  .edit-button {
-    width: 18px;
-    height: 18px;
+  .profile__edit-button {
+    width: 15px;
+    height: 15px;
+    background-size: 7,5px 7,5px;
   }
 }
 
-.edit-button:hover {
-  opacity: 0.6;
+.profile__edit-button:hover {
+  opacity: 60%;
 }
 
-.add-button {
-  background-image: url(./images/add-button.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: transparent;
-  width: 150px;
-  height: 50px;
+.profile__add-button {
+  width: 145px;
+  height: 48px;
   border: 2px solid rgba(255, 255, 255, 1);
+  background: transparent url(./images/add-button.svg) no-repeat center;
+  border-radius: 3px;
   cursor: pointer;
+  align-self: center;
   margin-left: auto;
+  transition: opacity .8s ease 0s;
 }
 
 @media (max-width: 767px) {
-  .add-button {
+  .profile__add-button {
+    width: 280px;
     margin-left: 0;
-    width: 282px;
   }
 }
 
-.add-button:hover {
+.profile__add-button:hover {
   opacity: 0.6;
 }
-
 
 .elements {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  column-gap: 18px;
+  row-gap: 20px;
   margin: 50px auto 0;
   padding: 0;
 }
 
-@media (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
   .elements {
     padding: 0 60px;
   }
@@ -256,6 +271,7 @@
     margin: 36px auto 0;
     line-height: 0;
     padding: 0;
+    gap: 20px;
   }
 }
 
@@ -269,12 +285,9 @@
   overflow: hidden;
 }
 
-.element__name-container {
-  max-width: 200px;
-}
-
 .element__container {
   display: flex;
+  height: 79px;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px 0 22px;
@@ -283,6 +296,7 @@
 
 .element__image {
   width: 100%;
+  object-fit: cover;
   margin: 0;
   padding: 0;
 }
@@ -293,33 +307,25 @@
   line-height: 29, 05px;
   color: rgba(0, 0, 0, 1);
   margin: 0;
-  padding: 25px 0 31px 0;
+  padding: 40px 0 38px 0;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 
 .like-button {
-  width: 22px;
-  height: 19px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: transparent;
   border: none;
-  background-image: url(./images/like-button.svg);
+  width: 28px;
+  height: 20px;
   cursor: pointer;
+  background-color: #FFFFFF;
+  transition: opacity .8s ease 0s;
 }
 
 .like-button:hover {
   opacity: 0.6;
 }
 
-.like-button_is-active {
-  display: none;
-  background: url(./images/like-button_active.svg) no-repeat center;
-  border: none;
-  cursor: pointer;
-}
 
 .footer {
   margin: 71px auto 0;
@@ -338,163 +344,167 @@
   margin: 0;
 }
 
-.popap {
-  font-family: 'Inter', Arial, Helvetica, sans-serif;
-  display: none;
-  align-items: center;
-  justify-content: center;
+.popup {
   position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  border: 1px solid rgba(0, 0, 0, 1);
-  background-color: rgba(0, 0, 0, .5);
+  display: none;
+  transition: all .8s ease 0s;
 }
 
-.popap__container {
-  margin: 195px auto 0;
-  position: relative;
-  border: 1px solid rgba(175, 44, 44, 0);
-  max-width: 500px;
-  width: 100%;
-  max-height: 370px;
-  height: 100%;
+.popup_open {
+  display: block;
 }
 
-@media (max-width: 767px) {
-  .popap__container {
-    max-width: 282px;
-    min-height: 322px;
-    margin: 75px auto 0;
-  }
+.popup__container {
+  padding: 0 19px;
 }
 
-.popap__profile {
-  font-weight: 900;
-  font-size: 24px;
-  line-height: 29px;
-  margin: 0 0 54px;
-  padding: 0;
-}
-
-@media (max-width: 767px) {
-  .popap__profile {
-    font-size: 18px;
-    line-height: 22px;
-    max-width: 282px;
-    margin: 0 0 75px;
-  }
-}
-
-.popap__content {
-  max-width: 430px;
-  width: 100%;
+.popup__body {
   background-color: #FFFFFF;
-  color: #000;
-  position: relative;
-  padding: 34px 36px 37px;
+  color: rgba(0, 0, 0, 1);
+  width: 282px;
+  height: 322px;
   border-radius: 10px;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, .15);
-  margin: 40px auto 0;
-  box-sizing: border-box;
+  margin: 123px auto;
 }
 
-@media (max-width: 767px) {
-  .popap__content {
-    max-width: 282px;
-    width: 100%;
-    min-height: 322px;
-    margin: 38px 0 0;
-    padding: 25px 22px;
+@media screen and (min-width: 768px) {
+  .popup__body {
+    width: 430px;
+    height: 330px;
+    border-radius: 10px;
+    margin: 195px auto;
   }
 }
 
-.popap__close {
-  background: transparent url(./images/close_button_icon.svg) no-repeat center;
-  border: none;
-  cursor: pointer;
+.popup__content {
+  height: calc(100% - 44px);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  .popup__content {
+    height: calc(100% - 72px);
+    padding: 36px;
+  }
+}
+
+.popup__title {
   margin: 0;
-  padding: 0;
-  width: 32px;
-  height: 32px;
-  position: absolute;
-  top: 0;
-  right: 0;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 1.22;
 }
 
-@media (max-width: 767px) {
-  .popap__close {
-  background: transparent url(./images/popap_close_small.svg) no-repeat center;
-  width: 20px;
-  height: 20px;
+@media screen and (min-width: 768px) {
+  .popup__title {
+    font-size: 24px;
   }
 }
 
-.popap__close:hover {
-  opacity: 0.6;
+.popup__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 45px;
 }
 
-.popap__name {
+@media screen and (min-width: 768px) {
+  .popup__form {
+    gap: 30px;
+  }
+}
+
+.popup__input {
   font-size: 14px;
-  line-height: 17px;
-  padding-bottom: 13px;
-  border-bottom: 1px solid rgba(0, 0, 0, .5) !important;
-  min-width: 356px;
-  margin: 0 0 30px;
+  line-height: 1.2;
+  padding: 8px 0 13px 0;
+  width: 238px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, .2)!important;
+}
+
+.popup__input:active {
   border: none;
 }
 
-@media (max-width: 767px) {
-  .popap__name {
-    min-width: 238px;
+@media screen and (min-width: 768px) {
+  .popup__input {
+    padding: 13px 0 13px 0;
+    width: 358px;
   }
 }
 
-.popap__activity {
+.popup__input {
   font-size: 14px;
-  line-height: 17px;
-  padding-bottom: 13px;
-  border-bottom: 1px solid rgba(0, 0, 0, .5) !important;
-  min-width: 356px;
-  margin: 0 0 48px;
+  line-height: 1.2;
+  padding: 8px 0 13px 0;
+  width: 238px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, .2)!important;
+}
+
+.popup__input:active {
   border: none;
 }
 
-@media (max-width: 767px) {
-  .popap__activity {
-    min-width: 238px;
-    margin: 0 0 45px;
+@media screen and (min-width: 768px) {
+  .popup__input {
+    padding: 13px 0 13px 0;
+    width: 358px;
   }
 }
 
-.popap__save-button {
-  width: 358px;
-  height: 50px;
+.popup__submit {
+  width: 238px;
+  height: 46px;
   background-color: rgba(0, 0, 0, 1);
   color: #FFFFFF;
   border: none;
-  font-size: 18px;
-  line-height: 22px;
-  font-weight: 400;
-  text-align: center;
+  border-radius: 2px;
+  transition: opacity .8s ease 0s;
+}
+
+.popup__submit:hover {
   cursor: pointer;
-}
-
-@media (max-width: 767px) {
-  .popap__save-button {
-    width: 238px;
-    height: 46px;
-    font-size: 14px;
-    line-height: 17px;
-    margin-bottom: 0px;
-  }
-}
-
-.popap__save-button:hover {
   opacity: 0.8;
 }
 
-.popap_is-active {
-  display: block;
+@media screen and (min-width: 768px) {
+  .popup__submit {
+    width: 358px;
+    height: 50px;
+  }
+}
+
+.popup__close {
+  background: transparent url(./images/close_button_icon.svg) no-repeat center;
+  width: 32px;
+  height: 32px;
+  transition: opacity .8s ease 0s;
+  position: absolute;
+  top: -50px;
+  right: 0;
+
+}
+
+.popup__close:hover {
+  opacity: 0.8;
+}
+
+@media screen and (min-width: 425px) {
+  .popup__close {
+    top: -40px;
+    right: -40px;
+  }
 }
