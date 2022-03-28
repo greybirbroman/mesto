@@ -1,0 +1,17 @@
+.popup__body {
+  background-color: #FFFFFF;
+  color: rgba(0, 0, 0, 1);
+  width: 282px;
+  height: 322px;
+  border-radius: 10px;
+  margin: 123px auto;
+}
+
+@media screen and (min-width: 768px) {
+  .popup__body {
+    width: 430px;
+    height: 330px;
+    border-radius: 10px;
+    margin: 195px auto;
+  }
+}
