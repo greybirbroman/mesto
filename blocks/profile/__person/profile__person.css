@@ -1,0 +1,12 @@
+.profile__person {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .profile__person {
+    gap: 26px;
+    flex-direction: column;
+  }
+}

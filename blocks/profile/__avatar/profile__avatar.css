@@ -1,12 +1,8 @@
 .profile__avatar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-@media (max-width: 767px) {
-  .profile__avatar {
-    gap: 26px;
-    flex-direction: column;
-  }
+  max-width: 120px;
+  max-height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  max-width: 120px;
+  max-height: 120px;
 }
