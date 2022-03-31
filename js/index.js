@@ -13,6 +13,8 @@ let profileActivity = document.querySelector('.profile__activity');
 function openPopup(evt) {
   evt.preventDefault();
   popup.classList.add('popup_open');
+  profileName.textContent = nameInput.value;
+  profileActivity.textContent = jobInput.value;
 }
 
 // POPUP CLOSE FUNCTION
