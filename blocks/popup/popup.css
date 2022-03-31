@@ -9,5 +9,7 @@
   left: 0;
   right: 0;
   display: none;
+  justify-content: center;
+  align-content: center;
   transition: all .5s ease 0s;
 }

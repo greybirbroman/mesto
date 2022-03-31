@@ -6,7 +6,8 @@
   position: absolute;
   top: -35px;
   right: 0;
-border: none;
+  border: none;
+  cursor: pointer;
 }
 
 .popup__close:hover {

@@ -10,17 +10,16 @@ let profileActivity = document.querySelector('.profile__activity');
 
 // POPUP OPEN FUNCTION
 
-function openPopup() {
+function openPopup(evt) {
+  evt.preventDefault();
   popup.classList.add('popup_open');
 }
-editButton.addEventListener('click', openPopup);
 
 // POPUP CLOSE FUNCTION
 
 function closePopup() {
   popup.classList.remove('popup_open');
 }
-popupCloseButton.addEventListener('click', closePopup);
 
 // POPUP SUBMIT FUNCTION
 
@@ -30,7 +29,11 @@ function formSubmitHandler(evt) {
   profileActivity.textContent = jobInput.value;
   closePopup();
 }
-formElement.addEventListener('submit', formSubmitHandler);
+
+
+editButton.addEventListener('click', openPopup); // Прослушиватель на *edit-button*
+popupCloseButton.addEventListener('click', closePopup); // Прослушиватель *на close-button*
+formElement.addEventListener('submit', formSubmitHandler); // Прослушиватель *на submit-button*
 
 
 // Bootcamp =)
