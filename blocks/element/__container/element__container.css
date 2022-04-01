@@ -4,5 +4,6 @@
    align-items: center;
    padding: 0 20px 0 22px;
    margin: 0;
+   /* Иначе все ломается! */
    height: 79px;
  }

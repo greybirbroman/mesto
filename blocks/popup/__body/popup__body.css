@@ -2,7 +2,6 @@
   background-color: #FFFFFF;
   color: rgba(0, 0, 0, 1);
   width: 282px;
-  height: 322px;
   padding: 26px 22px;
   border-radius: 10px;
   display: flex;
@@ -17,7 +16,6 @@
 @media screen and (min-width: 768px) {
   .popup__body {
     width: 430px;
-    height: 330px;
     padding: 36px;
   }
 }
