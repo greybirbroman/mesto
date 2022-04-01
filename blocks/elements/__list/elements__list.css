@@ -1,16 +1,11 @@
 .elements__list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-auto-rows: 361px;
   column-gap: 18px;
   row-gap: 20px;
   padding: 0;
   list-style-type: none;
-}
-
-@media screen and (max-width: 1023px) {
-  .elements__list {
-    padding: 0 60px;
-  }
 }
 
 @media (max-width: 767px) {

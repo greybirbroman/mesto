@@ -11,7 +11,6 @@ let profileActivity = document.querySelector('.profile__activity');
 // POPUP OPEN FUNCTION
 
 function openPopup(evt) {
-  evt.preventDefault();
   popup.classList.add('popup_open');
   profileName.textContent = nameInput.value;
   profileActivity.textContent = jobInput.value;
