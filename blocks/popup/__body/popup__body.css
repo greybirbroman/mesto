@@ -10,15 +10,14 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
-  margin: 123px auto;
   box-sizing: border-box;
+  align-self: center;
 }
 
 @media screen and (min-width: 768px) {
   .popup__body {
     width: 430px;
     height: 330px;
-    margin: 195px auto;
     padding: 36px;
   }
 }
