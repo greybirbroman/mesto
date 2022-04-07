@@ -1,6 +1,6 @@
 .element__image {
   max-width: 100%;
-  height: calc(100% - 79px);
+  height: 282px;
   object-fit: cover;
   margin: 0;
   padding: 0;
