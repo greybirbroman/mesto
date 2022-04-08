@@ -31,54 +31,6 @@
 
       <section class="elements">
         <ul class="elements__list">
-          <li class="element">
-            <img class="element__image" src="./images/mesto_place_karach.jpg" alt="Карачаевск">
-            <button type="button" class="element__delite-button"></button>
-            <div class="element__container">
-              <h3 class="element__name">Карачаевск</h3>
-              <button type="button" class="element__like-button element__like-button_active"></button>
-            </div>
-          </li>
-          <li class="element">
-            <img class="element__image" src="./images/mesto_place_spb.jpeg" alt="Санкт-Петербург">
-            <button type="button" class="element__delite-button"></button>
-            <div class="element__container">
-              <h3 class="element__name">Санкт-Петербург</h3>
-              <button type="button" class="element__like-button"></button>
-            </div>
-          </li>
-          <li class="element">
-            <img class="element__image" src="./images/mesto_place_nadym.jpeg" alt="Надым">
-            <button type="button" class="element__delite-button"></button>
-            <div class="element__container">
-              <h3 class="element__name">Надым</h3>
-              <button type="button" class="element__like-button"></button>
-            </div>
-          </li>
-          <li class="element">
-            <img class="element__image" src="./images/mesto_place_elbrus.jpg" alt="Гора Эльбрус">
-            <button type="button" class="element__delite-button"></button>
-            <div class="element__container">
-              <h3 class="element__name">Гора Эльбрус</h3>
-              <button type="button" class="element__like-button"></button>
-            </div>
-          </li>
-          <li class="element">
-            <img class="element__image" src="./images/mesto_place_bryansk.jpeg" alt="Курган-Бессмертия">
-            <button type="button" class="element__delite-button"></button>
-            <div class="element__container">
-              <h3 class="element__name">Брянск</h3>
-              <button type="button" class="element__like-button"></button>
-            </div>
-          </li>
-          <li class="element">
-            <img class="element__image" src="./images/mesto_place_karach.jpg" alt="Карачаево - Черкессия">
-            <button type="button" class="element__delite-button"></button>
-            <div class="element__container">
-              <h3 class="element__name">Карачаево - Черкессия</h3>
-              <button type="button" class="element__like-button"></button>
-            </div>
-          </li>
         </ul>
       </section>
     </main>
@@ -86,7 +38,7 @@
       <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
   </div>
-  <div class="popup">
+  <div class="popup" id="popup_edit-profile">
     <div class="popup__body">
       <h2 class="popup__title">Редактировать профиль</h2>
       <form name="popupEditForm" action="#" class="popup__form">
@@ -99,6 +51,30 @@
       <button type="button" class="popup__close"></button>
     </div>
   </div>
+  <div class="popup" id="popup_add-content">
+    <div class="popup__body">
+      <h2 class="popup__title">Новое место</h2>
+      <form name="popupAddContent" action="#" class="popup__form">
+        <input name="name" type="text" placeholder="Название" class="popup__input popup__input_place_title"
+          id="name">
+        <input name="job" type="text" placeholder="Ссылка на картинку" class="popup__input popup__input_place_link"
+          id="job">
+        <button type="submit" class="popup__submit">Создать</button>
+      </form>
+      <button type="button" class="popup__close"></button>
+    </div>
+  </div>
+
+  <template class="template-element" id="template-element">
+    <li class="element">
+      <button type="button" class="element__delite-button"></button>
+        <img src="#" alt="#" class="element__image">
+        <div class="element__container">
+          <h3 class="element__name"></h3>
+          <button type="button" class="element__like-button"></button>
+        </div>
+    </li>
+  </template>
   <script src="./js/index.js"></script>
 </body>
 

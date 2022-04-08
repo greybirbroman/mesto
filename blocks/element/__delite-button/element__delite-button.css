@@ -7,6 +7,7 @@
   top: 20px;
   right: 20px;
   transition: opacity .6s ease 0s;
+  cursor: pointer;
 }
 
 .element__delite-button:hover {

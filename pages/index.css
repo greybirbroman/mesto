@@ -49,7 +49,7 @@
 @import url(../blocks/element/element.css);
 @import url(../blocks/element/__name/element__name.css);
 @import url(../blocks/element/__like-button/element__like-button.css);
-@import url(../blocks/element/__like-button/_active/element__like-button_active.css);
+@import url(../blocks/element/__like-button/_type/_active/element__like-button_type_active.css);
 @import url(../blocks/element/__image/element__image.css);
 @import url(../blocks/element/__delite-button/element__delite-button.css);
 @import url(../blocks/element/__container/element__container.css);
