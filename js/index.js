@@ -27,26 +27,26 @@ const initialCards = [
   }
 ];
 
-  // POPUP
+// POPUP
 const popup = document.querySelector('.popup'); // Попап
 const popupEdit = document.querySelector('.popup_type_edit'); // Попап Edit-Profile
 const popupAdd = document.querySelector('.popup_type_add'); // Попап Add-content
 const popupOpenCard = document.querySelector('.popup_type_open-card'); // Попап OpenCard
-  // POPUP CLOSE BUTTONS
-const popupCloseBtn = document.querySelector('.popup__close'); // Кнопка закрытия попапа EDIT
+// POPUP CLOSE BUTTONS
+const popupEditCloseBtn = document.querySelector('.popup__close_type_edit'); // Кнопка закрытия попапа EDIT
 const popupAddCloseBtn = document.querySelector('.popup__close_type_add'); // Кнопка закрытия попапа Add-Content
 const popupNewCardCloseBtn = document.querySelector('.popup__close_type_open-card'); // Кнопка закрытия попапа NewCard
-  // POPUP FORMS
+// POPUP FORMS
 const formElement = document.querySelector('.popup__form'); // Форма Edit-Profile
 const formAddContent = document.querySelector('.popup__form_type_submit'); // Форма Add-Content
 
-const nameInput = formElement.querySelector('#name'); // Инпут Name
-const jobInput = formElement.querySelector('#job'); // Инпут Job
+const nameInput = formElement.querySelector('.popup__input_place_name'); // Инпут Name
+const jobInput = formElement.querySelector('.popup__input_place_job'); // Инпут Job
 const profileName = document.querySelector('.profile__name'); // Имя Профиля на странице
 const profileActivity = document.querySelector('.profile__activity'); // Должность Профиля на странице
-const editButton = document.querySelector('.profile__edit-button'); // Кнопка редактирования профиля
+const editBtn = document.querySelector('.profile__edit-button'); // Кнопка Edit-Profile
 const createContentBtn = document.querySelector('.popup__submit_type_add'); // Кнопка "Создать" Add-Content
-const addCardBtn = document.querySelector('.profile__add-button'); // Кнопка "Добавить"
+const addCardBtn = document.querySelector('.profile__add-button'); // Кнопка "Добавить" Add-Content
 const popupImage = document.querySelector('.popup__image'); // Изображение внутри попапа OpenCard
 const popupAlt = document.querySelector('.popup__alt'); // Подпись изображения попапа OpenCard
 
@@ -99,7 +99,7 @@ function openPopup(popup) {
   popup.classList.add('popup_open');
 }
 
-editButton.addEventListener('click', () => {
+editBtn.addEventListener('click', () => {
   openPopup(popupEdit);
 });
 addCardBtn.addEventListener('click', () => {
@@ -111,7 +111,8 @@ addCardBtn.addEventListener('click', () => {
 function closePopup(popup) {
   popup.classList.remove('popup_open');
 }
-popupCloseBtn.addEventListener('click', () => {
+
+popupEditCloseBtn.addEventListener('click', () => {
   closePopup(popupEdit);
 });
 popupAddCloseBtn.addEventListener('click', () => {
@@ -130,7 +131,7 @@ function formSubmitHandler(evt) {
   closePopup(popupEdit);
 }
 // NEW CARD 
-function AddContentHandler(evt) {
+function addContentHandler(evt) {
   evt.preventDefault();
   const inputTitleValue = document.querySelector('.popup__input_place_title').value;
   const inputLinkValue = document.querySelector('.popup__input_place_link').value;
@@ -139,5 +140,5 @@ function AddContentHandler(evt) {
   closePopup(popupAdd);
 }
 
-formElement.addEventListener('submit', formSubmitHandler); // Прослушиватель *на submit-button*
-formAddContent.addEventListener('submit', AddContentHandler);  // Прослушиватель *Создать* контент
+formElement.addEventListener('submit', formSubmitHandler); // Прослушиватель *Сохранить* профиль
+formAddContent.addEventListener('submit', addContentHandler);  // Прослушиватель *Создать* контент

@@ -42,23 +42,19 @@
     <div class="popup__body">
       <h2 class="popup__title">Редактировать профиль</h2>
       <form name="popupEditForm" action="#" class="popup__form">
-        <input name="name" type="text" placeholder="Жак-Ив Кусто" class="popup__input popup__input_place_name"
-          id="name">
-        <input name="job" type="text" placeholder="Исследователь океана" class="popup__input popup__input_place_job"
-          id="job">
+        <input name="name" type="text" placeholder="Жак-Ив Кусто" class="popup__input popup__input_place_name">
+        <input name="job" type="text" placeholder="Исследователь океана" class="popup__input popup__input_place_job">
         <button type="submit" class="popup__submit">Сохранить</button>
       </form>
-      <button type="button" class="popup__close"></button>
+      <button type="button" class="popup__close popup__close_type_edit"></button>
     </div>
   </div>
   <div class="popup popup_type_add">
     <div class="popup__body">
       <h2 class="popup__title">Новое место</h2>
       <form name="popupAddContent" action="#" class="popup__form popup__form_type_submit">
-        <input name="name" type="text" placeholder="Название" class="popup__input popup__input_place_title"
-          id="name">
-        <input name="job" type="text" placeholder="Ссылка на картинку" class="popup__input popup__input_place_link"
-          id="job">
+        <input name="title" type="text" placeholder="Название" class="popup__input popup__input_place_title">
+        <input name="link" type="text" placeholder="Ссылка на картинку" class="popup__input popup__input_place_link">
         <button type="submit" class="popup__submit popup__submit_type_add">Создать</button>
       </form>
       <button type="button" class="popup__close popup__close_type_add"></button>
@@ -67,7 +63,7 @@
   <div class="popup popup_type_open-card">
     <div class="popup__card-container">
       <div class="popup__placement">
-        <img src="#" alt="#" class="popup__image" />
+        <img src="#" alt="#" class="popup__image">
         <p class="popup__alt"></p>
       </div>
       <button type="button" class="popup__close popup__close_type_open-card"></button>
@@ -76,11 +72,11 @@
   <template class="template-element">
     <li class="element">
       <button type="button" class="element__delite-button"></button>
-        <img src="#" alt="#" class="element__image">
-        <div class="element__container">
-          <h3 class="element__name"></h3>
-          <button type="button" class="element__like-button"></button>
-        </div>
+      <img src="#" alt="#" class="element__image">
+      <div class="element__container">
+        <h3 class="element__name"></h3>
+        <button type="button" class="element__like-button"></button>
+      </div>
     </li>
   </template>
   <script src="./js/index.js"></script>
