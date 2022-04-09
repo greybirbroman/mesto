@@ -14,8 +14,8 @@ const initialCards = [
     link: 'https://xage.ru/media/posts/2021/5/29/semka-odnoj-stseny-v-seriale-ofis-oboshlas-v-250-tysjach-dollarov.jpg'
   },
   {
-    name: 'Стенли и Тобби',
-    link: 'https://roost.nbcuni.com/bin/viewasset.html/content/dam/Peacock/Campaign/landingpages/library/theoffice/season4/episodes/office_s4_e16.jpg/_jcr_content/renditions/original'
+    name: 'Стенли доволен?',
+    link: 'https://www.indiewire.com/wp-content/uploads/2020/07/Screen-Shot-2020-07-06-at-10.39.06-AM.png'
   },
   {
     name: 'Холли',
