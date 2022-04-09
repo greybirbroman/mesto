@@ -38,7 +38,7 @@
       <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
     </footer>
   </div>
-  <div class="popup" id="popup_edit-profile">
+  <div class="popup popup_type_edit">
     <div class="popup__body">
       <h2 class="popup__title">Редактировать профиль</h2>
       <form name="popupEditForm" action="#" class="popup__form">
@@ -51,7 +51,7 @@
       <button type="button" class="popup__close"></button>
     </div>
   </div>
-  <div class="popup" id="popup_add-content">
+  <div class="popup popup_type_add">
     <div class="popup__body">
       <h2 class="popup__title">Новое место</h2>
       <form name="popupAddContent" action="#" class="popup__form">
@@ -59,13 +59,13 @@
           id="name">
         <input name="job" type="text" placeholder="Ссылка на картинку" class="popup__input popup__input_place_link"
           id="job">
-        <button type="submit" class="popup__submit">Создать</button>
+        <button type="submit" class="popup__submit popup__submit_type_add">Создать</button>
       </form>
-      <button type="button" class="popup__close"></button>
+      <button type="button" class="popup__close popup__close_type_add"></button>
     </div>
   </div>
 
-  <template class="template-element" id="template-element">
+  <template class="template-element">
     <li class="element">
       <button type="button" class="element__delite-button"></button>
         <img src="#" alt="#" class="element__image">
