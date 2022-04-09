@@ -2,29 +2,28 @@
 
 const initialCards = [
   {
-    name: 'Двайт',
-    //link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-    link: 'https://cdn-irec.r-99.com/sites/default/files/imagecache/copyright/user-images/57951/l0P0nDvdnlWqWxtaiDcw.jpg'
+    name: 'Дуайт',
+    link: 'https://kinoblog.tv/images/films/365.jpg'
   },
   {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+    name: 'Кевин',
+    link: 'https://s3.wi-fi.ru/cp3o/5463adydqnud6w5s4w21kgr5pf69?response-content-type=image%2Fjpeg'
   },
   {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+    name: 'Джим и Пэм',
+    link: 'https://xage.ru/media/posts/2021/5/29/semka-odnoj-stseny-v-seriale-ofis-oboshlas-v-250-tysjach-dollarov.jpg'
   },
   {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+    name: 'Райан',
+    link: 'https://dic.academic.ru/pictures/wiki/files/82/Ryanoffice.jpg'
   },
   {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+    name: 'Холли',
+    link: 'https://gol.ru/images/original/materials/sections/82278/82278.jfif'
   },
   {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+    name: 'Dunder Mifflin',
+    link: 'https://avatars.mds.yandex.net/get-kinopoisk-post-img/1528730/bea07e06cd2826fbf4784a3069b4e975/960'
   }
 ];
 
