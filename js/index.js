@@ -28,17 +28,14 @@ const initialCards = [
 ];
 
 // POPUP
-const popup = document.querySelector('.popup'); // Попап
-const popupEdit = document.querySelector('.popup_type_edit'); // Попап Edit-Profile
-const popupAdd = document.querySelector('.popup_type_add'); // Попап Add-content
-const popupOpenCard = document.querySelector('.popup_type_open-card'); // Попап OpenCard
-// POPUP CLOSE BUTTONS
-const popupEditCloseBtn = popupEdit.querySelector('.popup__close_type_edit'); // Кнопка закрытия попапа EDIT
-const popupAddCloseBtn = popupAdd.querySelector('.popup__close_type_add'); // Кнопка закрытия попапа Add-Content
-const popupNewCardCloseBtn = popupOpenCard.querySelector('.popup__close_type_open-card'); // Кнопка закрытия попапа OpenCard
+const popups = document.querySelectorAll('.popup'); // Popups
+const popupEdit = document.querySelector('.popup_type_edit'); // Popup EditProfile
+const popupAdd = document.querySelector('.popup_type_add'); // Popup AddСontent
+const popupOpenCard = document.querySelector('.popup_type_open-card'); // Popup OpenCard
+
 // POPUP FORMS
-const formElement = popupEdit.querySelector('.popup__form'); // Форма Edit-Profile
-const formAddContent = popupAdd.querySelector('.popup__form_type_submit'); // Форма Add-Content
+const formElement = popupEdit.querySelector('.popup__form'); // Форма EditProfile
+const formAddContent = popupAdd.querySelector('.popup__form_type_submit'); // Форма AddContent
 
 const nameInput = formElement.querySelector('.popup__input_place_name'); // Инпут Name
 const jobInput = formElement.querySelector('.popup__input_place_job'); // Инпут Job
@@ -70,6 +67,7 @@ function getElement(item) {
 
   cardName.textContent = item.name;
   cardImage.src = item.link;
+  cardImage.alt = item.name;
 
   // ADD LIKE
   cardLikeBtn.addEventListener('click', () => {
@@ -84,11 +82,8 @@ function getElement(item) {
   cardImage.addEventListener('click', () => {
     openPopup(popupOpenCard);
     popupImage.src = item.link;
+    popupImage.alt = item.name;
     popupAlt.textContent = item.name;
-  });
-  // CLOSE VIEW CARD
-  popupNewCardCloseBtn.addEventListener('click', () => {
-    closePopup(popupOpenCard);
   });
   return cardElement;
 }
@@ -106,39 +101,43 @@ addCardBtn.addEventListener('click', () => {
   openPopup(popupAdd);
 });
 
-
-// POPUP CLOSE FUNCTION
+// POPUPS CLOSE FUNCTION
 function closePopup(popup) {
   popup.classList.remove('popup_open');
 }
-
-popupEditCloseBtn.addEventListener('click', () => {
-  closePopup(popupEdit);
-});
-popupAddCloseBtn.addEventListener('click', () => {
-  closePopup(popupAdd);
-});
-
+// Большое спасибо за интересный код! Так правда опрятнее!
+popups.forEach((popup) => {
+  popup.addEventListener('click', (evt) => {
+    if (evt.target.classList.contains('popup__close')) {
+      closePopup(popup)
+    }
+  })
+})
 
 // POPUP EDIT-PROFILE SUBMIT FUNCTION
+
 nameInput.value = profileName.textContent;
 jobInput.value = profileActivity.textContent;
 
-function formSubmitHandler(evt) {
+function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileActivity.textContent = jobInput.value;
   closePopup(popupEdit);
+  evt.target.reset();
 }
-// NEW CARD 
-function addContentHandler(evt) {
+
+// NEW CARD FUNTION
+
+function handleAddContentFormSubmit(evt) {
   evt.preventDefault();
   const inputTitleValue = popupAdd.querySelector('.popup__input_place_title').value;
   const inputLinkValue = popupAdd.querySelector('.popup__input_place_link').value;
   const cardNew = getElement({ name: inputTitleValue, link: inputLinkValue });
   cardsList.prepend(cardNew);
   closePopup(popupAdd);
+  evt.target.reset();
 }
 
-formElement.addEventListener('submit', formSubmitHandler); // Прослушиватель *Сохранить* профиль
-formAddContent.addEventListener('submit', addContentHandler);  // Прослушиватель *Создать* контент
+formElement.addEventListener('submit', handleProfileFormSubmit); // Прослушиватель *Сохранить* профиль
+formAddContent.addEventListener('submit', handleAddContentFormSubmit);  // Прослушиватель *Создать* контент
