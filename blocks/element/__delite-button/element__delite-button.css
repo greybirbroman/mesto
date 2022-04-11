@@ -6,10 +6,11 @@
   height: 19px;
   top: 20px;
   right: 20px;
-  transition: opacity .6s ease 0s;
+  transition: all .6s ease 0s;
   cursor: pointer;
 }
 
 .element__delite-button:hover {
   opacity: 0.7;
+  transform: scale(1.1);
 }

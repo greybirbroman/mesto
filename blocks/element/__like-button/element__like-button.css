@@ -5,9 +5,10 @@
   height: 20px;
   cursor: pointer;
   background-color: #FFFFFF;
-  transition: opacity .8s ease 0s;
+  transition: all .8s ease 0s;
 }
 
 .element__like-button:hover {
   opacity: 0.5;
+  transform: scale(1.1);
 }

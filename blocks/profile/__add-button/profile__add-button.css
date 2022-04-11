@@ -8,6 +8,7 @@
   align-self: center;
   margin-left: auto;
   transition: opacity .8s ease 0s;
+  transition: all .5s ease 0s;
 }
 
 @media (max-width: 767px) {
@@ -21,4 +22,5 @@
 
 .profile__add-button:hover {
   opacity: 0.6;
+  transform: scale(1.1);
 }

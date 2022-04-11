@@ -8,5 +8,10 @@
   flex-direction: column;
   overflow: hidden;
   position: relative;
+  transition: all .5s ease 0s;
+}
+
+.element:hover {
+  transform: scale(1.02);
 }
 
