@@ -46,7 +46,6 @@ const createContentBtn = popupAdd.querySelector('.popup__submit_type_add'); // �
 const addCardBtn = document.querySelector('.profile__add-button'); // Кнопка "Добавить" Add-Content
 const popupImage = popupOpenCard.querySelector('.popup__image'); // Изображение внутри попапа OpenCard
 const popupAlt = popupOpenCard.querySelector('.popup__alt'); // Подпись изображения попапа OpenCard
-
 // GET CARD FROM JS
 
 const template = document.querySelector('.template-element');
@@ -90,8 +89,8 @@ function getElement(item) {
 render();
 
 // POPUP OPEN FUNCTION
-function openPopup(popup) {
-  popup.classList.add('popup_open');
+function openPopup(popups) {
+  popups.classList.add('popup_open');
 }
 
 editBtn.addEventListener('click', () => {
@@ -102,14 +101,17 @@ addCardBtn.addEventListener('click', () => {
 });
 
 // POPUPS CLOSE FUNCTION
-function closePopup(popup) {
-  popup.classList.remove('popup_open');
+function closePopup(popups) {
+  popups.classList.remove('popup_open');
 }
 // Большое спасибо за интересный код! Так правда опрятнее!
-popups.forEach((popup) => {
-  popup.addEventListener('click', (evt) => {
+popups.forEach((popups) => {
+  popups.addEventListener('click', (evt) => {
     if (evt.target.classList.contains('popup__close')) {
-      closePopup(popup)
+      closePopup(popups)
+    }
+    else if (evt.target = evt.currentTarget) {
+      closePopup(popups)
     }
   })
 })
