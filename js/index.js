@@ -107,14 +107,17 @@ function closePopup(popups) {
 // Большое спасибо за интересный код! Так правда опрятнее!
 popups.forEach((popups) => {
   popups.addEventListener('click', (evt) => {
-    if (evt.target.classList.contains('popup__close')) {
-      closePopup(popups)
-    }
-    else if (evt.target = evt.currentTarget) {
+    if (evt.target.classList.contains('popup__close') || evt.target === evt.currentTarget) {
       closePopup(popups)
     }
   })
+  document.addEventListener('keydown', (evt) => {
+    if (evt.target.classList.contains('popup_open') || evt.key === 'Escape') {
+      closePopup(popups);
+    }
+  })
 })
+
 
 // POPUP EDIT-PROFILE SUBMIT FUNCTION
 
