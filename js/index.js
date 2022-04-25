@@ -89,40 +89,54 @@ function getElement(item) {
 render();
 
 // POPUP OPEN FUNCTION
+
+const options = ({
+  "capture": false,
+  "once": true,
+  "passive": false,
+})
+
 function openPopup(popups) {
   popups.classList.add('popup_open');
+  document.addEventListener('keydown', handleEsc, options);
 }
 
 editBtn.addEventListener('click', () => {
   openPopup(popupEdit);
 });
+
 addCardBtn.addEventListener('click', () => {
   openPopup(popupAdd);
 });
 
-// POPUPS CLOSE FUNCTION
+// POPUPS CLOSE FUNCTIONS
 function closePopup(popups) {
   popups.classList.remove('popup_open');
 }
-// Большое спасибо за интересный код! Так правда опрятнее!
-popups.forEach((popups) => {
-  popups.addEventListener('click', (evt) => {
-    if (evt.target.classList.contains('popup__close') || evt.target === evt.currentTarget) {
-      closePopup(popups)
+
+function handleEsc(evt) {
+  popups.forEach((popup) => {
+    if (evt.key === 'Escape') {
+      closePopup(popup);
     }
   })
-  document.addEventListener('keydown', (evt) => {
-    if (evt.target.classList.contains('popup_open') || evt.key === 'Escape') {
-      closePopup(popups);
+}
+
+popups.forEach((popup) => {
+  popup.addEventListener('click', (evt) => {
+    if (evt.target.classList.contains('popup__close') || evt.target === evt.currentTarget) {
+      closePopup(popup);
     }
   })
 })
-
+//   document.addEventListener('keydown', (evt) => {
+//     if (evt.target.classList.contains('popup_open') || evt.key === 'Escape') {
+//       closePopup(popup);
+//     }
+//   })
+// })
 
 // POPUP EDIT-PROFILE SUBMIT FUNCTION
-
-nameInput.value = profileName.textContent;
-jobInput.value = profileActivity.textContent;
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
@@ -132,7 +146,7 @@ function handleProfileFormSubmit(evt) {
   evt.target.reset();
 }
 
-// NEW CARD FUNTION
+// NEW CARD FUNCTION
 
 function handleAddContentFormSubmit(evt) {
   evt.preventDefault();
