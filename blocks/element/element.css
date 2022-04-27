@@ -9,6 +9,7 @@
   overflow: hidden;
   position: relative;
   transition: all .5s ease 0s;
+  cursor: pointer;
 }
 
 .element:hover {
