@@ -72,16 +72,13 @@ function openPopup(popups) {
   document.addEventListener('mousedown', closeByOverlay);
 }
 
-profileEditBtn.addEventListener("click", () => openEditPopup());
-cardAddBtn.addEventListener("click", () => openAddCardPopup());
-
 function openEditPopup() {
   toggleButtonState(Array.from(popupEdit.querySelectorAll(config.inputSelector)), popupEdit.querySelector(config.submitButtonSelector), config);
   openPopup(popupEdit);
 }
 
 function openAddCardPopup() {
-  toggleButtonState(Array.from(popupEdit.querySelectorAll(config.inputSelector)), popupEdit.querySelector(config.submitButtonSelector), config);
+  toggleButtonState(Array.from(popupAdd.querySelectorAll(config.inputSelector)), popupAdd.querySelector(config.submitButtonSelector), config);
   openPopup(popupAdd);
 }
 
@@ -137,5 +134,7 @@ function handleAddContentFormSubmit(evt) {
   evt.target.reset();
 }
 
+profileEditBtn.addEventListener("click", () => openEditPopup());
+cardAddBtn.addEventListener("click", () => openAddCardPopup());
 formElement.addEventListener('submit', handleProfileFormSubmit); // Прослушиватель *Сохранить* профиль
 formAddContent.addEventListener('submit', handleAddContentFormSubmit);  // Прослушиватель *Создать* контент
