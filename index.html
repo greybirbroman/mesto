@@ -42,19 +42,19 @@
     <div class="popup__body">
       <h2 class="popup__title">Редактировать профиль</h2>
       <form name="popupEditForm" class="popup__form popup__form_type_edit" novalidate>
-        <fieldset class="form__set">
-        <label class="popup__input-label">
-          <input required id="name-input" type="text" placeholder="Жак-Ив Кусто"
-            class="popup__input popup__input_place_name" minlength="2" maxlength="40">
-          <span class="popup__input-error" id="name-input-error"></span>
-        </label>
-        <label class="popup__input-label">
-          <input required id="job-input" type="text" placeholder="Исследователь океана"
-            class="popup__input popup__input_place_job" minlength="2" maxlength="200">
-          <span class="popup__input-error" id="job-input-error"></span>
-        </label>
-        <button type="submit" class="popup__submit popup__submit_type_disabled">Сохранить</button>
-      </fieldset>
+        <fieldset class="popup__fieldset">
+          <label class="popup__input-label">
+            <input required id="name-input" type="text" placeholder="Жак-Ив Кусто"
+              class="popup__input popup__input_place_name" minlength="2" maxlength="40">
+            <span class="popup__input-error" id="name-input-error"></span>
+          </label>
+          <label class="popup__input-label">
+            <input required id="job-input" type="text" placeholder="Исследователь океана"
+              class="popup__input popup__input_place_job" minlength="2" maxlength="200">
+            <span class="popup__input-error" id="job-input-error"></span>
+          </label>
+          <button type="submit" class="popup__submit">Сохранить</button>
+        </fieldset>
       </form>
 
       <button type="button" class="popup__close"></button>
@@ -64,19 +64,20 @@
     <div class="popup__body">
       <h2 class="popup__title">Новое место</h2>
       <form name="popupAddContent" class="popup__form popup__form_type_submit" novalidate>
-        <fieldset class="form__set">
-        <label class="popup__input-label">
-          <input required id="title-input" type="text" placeholder="Название"
-            class="popup__input popup__input_place_title" minlength="2" maxlength="30">
-          <span class="popup__input-error" id="title-input-error"></span>
-        </label>
-        <label class="popup__input-label">
-          <input required id="link-input" type="url" placeholder="Ссылка на картинку"
-            class="popup__input popup__input_place_link">
-          <span class="popup__input-error" id="link-input-error"></span>
-        </label>
-        <button type="submit" class="popup__submit popup__submit_type_disabled popup__submit_type_add">Создать</button>
-      </fieldset>
+        <fieldset class="popup__fieldset">
+          <label class="popup__input-label">
+            <input required id="title-input" type="text" placeholder="Название"
+              class="popup__input popup__input_place_title" minlength="2" maxlength="30">
+            <span class="popup__input-error" id="title-input-error"></span>
+          </label>
+          <label class="popup__input-label">
+            <input required id="link-input" type="url" placeholder="Ссылка на картинку"
+              class="popup__input popup__input_place_link">
+            <span class="popup__input-error" id="link-input-error"></span>
+          </label>
+          <button type="submit"
+            class="popup__submit popup__submit_type_add">Создать</button>
+        </fieldset>
       </form>
       <button type="button" class="popup__close"></button>
     </div>
