@@ -76,6 +76,8 @@ function openPopup(popups) {
 }
 
 function openEditPopup() {
+  // toggleSubmit (param1, param2, param3)
+  toggleButtonState(Array.from(popupEdit.querySelectorAll(config.inputSelector)), popupEdit.querySelector(config.submitButtonSelector), config);
   openPopup(popupEdit);
   nameInput.value = profileName.textContent;
   jobInput.value = profileActivity.textContent;
