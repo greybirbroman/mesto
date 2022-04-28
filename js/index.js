@@ -44,10 +44,10 @@ function getElement(item) {
 
   // OPEN VIEW CARD
   cardImage.addEventListener('click', () => {
-    openPopup(popupViewCard);
     popupImage.src = item.link;
     popupImage.alt = item.name;
     popupAlt.textContent = item.name;
+    openPopup(popupViewCard);
   });
 
   cardName.textContent = item.name;
@@ -81,7 +81,7 @@ function openEditPopup() {
   jobInput.value = profileActivity.textContent;
 }
 
-function openAddCardPopup() {
+function openAddContentPopup() {
   // toggleSubmit (param1, param2, param3)
   toggleButtonState(Array.from(popupAdd.querySelectorAll(config.inputSelector)), popupAdd.querySelector(config.submitButtonSelector), config);
   openPopup(popupAdd);
@@ -138,6 +138,6 @@ function handleAddContentFormSubmit(evt) {
 }
 
 profileEditBtn.addEventListener("click", () => openEditPopup());
-cardAddBtn.addEventListener("click", () => openAddCardPopup());
+cardAddBtn.addEventListener("click", () => openAddContentPopup());
 formEditProfile.addEventListener('submit', handleProfileFormSubmit); // Прослушиватель *Сохранить* профиль
 formAddContent.addEventListener('submit', handleAddContentFormSubmit);  // Прослушиватель *Создать* контент
