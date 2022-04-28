@@ -42,6 +42,10 @@ function getElement(item) {
   const cardLikeBtn = cardElement.querySelector('.element__like-button');
   const cardDeliteBtn = cardElement.querySelector('.element__delite-button');
 
+  cardName.textContent = item.name;
+  cardImage.src = item.link;
+  cardImage.alt = item.name;
+
   // OPEN VIEW CARD
   cardImage.addEventListener('click', () => {
     popupImage.src = item.link;
@@ -49,10 +53,6 @@ function getElement(item) {
     popupAlt.textContent = item.name;
     openPopup(popupViewCard);
   });
-
-  cardName.textContent = item.name;
-  cardImage.src = item.link;
-  cardImage.alt = item.name;
 
   // ADD LIKE
   cardLikeBtn.addEventListener('click', () => {
