@@ -20,7 +20,7 @@ const cardAddBtn = document.querySelector('.profile__add-button'); // Кнопк
 const popupImage = popupOpenCard.querySelector('.popup__image'); // Изображение внутри попапа OpenCard
 const popupAlt = popupOpenCard.querySelector('.popup__alt'); // Подпись изображения попапа OpenCard
 const inputTitleValue = popupAdd.querySelector('.popup__input_place_title');
-  const inputLinkValue = popupAdd.querySelector('.popup__input_place_link');
+const inputLinkValue = popupAdd.querySelector('.popup__input_place_link');
 // GET CARD FROM JS
 
 const template = document.querySelector('.template-element');
@@ -72,13 +72,19 @@ function openPopup(popups) {
   document.addEventListener('mousedown', closeByOverlay);
 }
 
-profileEditBtn.addEventListener('click', () => {
-  openPopup(popupEdit);
-});
+profileEditBtn.addEventListener("click", () => openEditPopup());
+cardAddBtn.addEventListener("click", () => openAddCardPopup());
 
-cardAddBtn.addEventListener('click', () => {
+function openEditPopup() {
+  toggleButtonState(Array.from(popupEdit.querySelectorAll(config.inputSelector)), popupEdit.querySelector(config.submitButtonSelector), config);
+  openPopup(popupEdit);
+}
+
+function openAddCardPopup() {
+  toggleButtonState(Array.from(popupEdit.querySelectorAll(config.inputSelector)), popupEdit.querySelector(config.submitButtonSelector), config);
   openPopup(popupAdd);
-});
+}
+
 
 // POPUPS CLOSE FUNCTIONS
 function closePopup(popups) {
@@ -89,14 +95,14 @@ function closePopup(popups) {
 
 function handleEsc(evt) {
   if (evt.key === 'Escape') {
-      const popupOpened = document.querySelector('.popup_open');
-      closePopup(popupOpened);
+    const popupOpened = document.querySelector('.popup_open');
+    closePopup(popupOpened);
   }
 }
 
 function closeByOverlay(evt) {
   if (evt.target.classList.contains('popup')) {
-      closePopup(evt.target);
+    closePopup(evt.target);
   }
 }
 
