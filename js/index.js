@@ -76,15 +76,16 @@ function openPopup(popups) {
 }
 
 function openEditPopup() {
-  // toggleSubmit (param1, param2, param3)
-  toggleButtonState(Array.from(popupEdit.querySelectorAll(config.inputSelector)), popupEdit.querySelector(config.submitButtonSelector), config);
   openPopup(popupEdit);
+  nameInput.value = profileName.textContent;
+  jobInput.value = profileActivity.textContent;
 }
 
 function openAddCardPopup() {
   // toggleSubmit (param1, param2, param3)
   toggleButtonState(Array.from(popupAdd.querySelectorAll(config.inputSelector)), popupAdd.querySelector(config.submitButtonSelector), config);
   openPopup(popupAdd);
+  formAddContentElements.reset();
 }
 
 // POPUPS CLOSE FUNCTIONS
@@ -97,8 +98,6 @@ popups.forEach((popup) => {
   popup.addEventListener('mousedown', (evt) => {
     if (evt.target.classList.contains('popup__close')) {
       closePopup(popup);
-      formAddContentElements.reset();
-      formEditProfileElements.reset();
     }
   })
 })
@@ -107,23 +106,16 @@ function handleEsc(evt) {
   if (evt.key === 'Escape') {
     const popupOpened = document.querySelector('.popup_open');
     closePopup(popupOpened);
-    formAddContentElements.reset();
-    formEditProfileElements.reset();
   }
 }
 
 function closeByOverlay(evt) {
   if (evt.target.classList.contains('popup')) {
     closePopup(evt.target);
-    formAddContentElements.reset();
-    formEditProfileElements.reset();
   }
 }
 
 // POPUP EDIT-PROFILE SUBMIT FUNCTION
-
-nameInput.value = profileName.textContent;
-jobInput.value = profileActivity.textContent;
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
