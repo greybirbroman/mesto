@@ -72,7 +72,7 @@ render();
 function openPopup(popups) {
   popups.classList.add('popup_open');
   document.addEventListener('keydown', handleEsc);
-  document.addEventListener('mousedown', closeByOverlay);
+  popups.addEventListener('mousedown', closeByOverlay);
 }
 
 function openEditPopup() {
@@ -94,7 +94,7 @@ function openAddContentPopup() {
 function closePopup(popups) {
   popups.classList.remove('popup_open');
   document.removeEventListener('keydown', handleEsc);
-  document.removeEventListener('mousedown', closeByOverlay);
+  popups.removeEventListener('mousedown', closeByOverlay);
 }
 popups.forEach((popup) => {
   popup.addEventListener('mousedown', (evt) => {
@@ -112,7 +112,7 @@ function handleEsc(evt) {
 }
 
 function closeByOverlay(evt) {
-  if (evt.target.classList.contains('popup')) {
+  if (evt.target.classList.contains('popup_open')) {
     closePopup(evt.target);
   }
 }
