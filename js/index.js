@@ -23,6 +23,7 @@ const popupImage = popupViewCard.querySelector('.popup__image'); // Изобра
 const popupAlt = popupViewCard.querySelector('.popup__alt'); // Подпись изображения попапа OpenCard
 const inputTitleValue = popupAdd.querySelector('.popup__input_place_title');
 const inputLinkValue = popupAdd.querySelector('.popup__input_place_link');
+const buttonSubmit = popupEdit.querySelector('.popup__submit');
 
 // GET CARD FROM JS
 
