@@ -1,7 +1,7 @@
-const initialCards = [
+export const items = [
   {
     name: 'Дуайт',
-    link: 'https://kinoblog.tv/images/films/365.jpg'
+    link: 'https://gol.ru/images/original/materials/sections/82280/82280.jfif'
   },
   {
     name: 'Хеллоуин',
@@ -12,8 +12,8 @@ const initialCards = [
     link: 'https://xage.ru/media/posts/2021/5/29/semka-odnoj-stseny-v-seriale-ofis-oboshlas-v-250-tysjach-dollarov.jpg'
   },
   {
-    name: 'Стенли доволен?',
-    link: 'https://www.indiewire.com/wp-content/uploads/2020/07/Screen-Shot-2020-07-06-at-10.39.06-AM.png'
+    name: 'Кевин',
+    link: 'https://images11.esquire.ru/upload/img_cache/78e/78e2a5c0507a8b0f7bfaf973d61bd35b_ce_2249x1403x0x292_cropped_666x444.jpg'
   },
   {
     name: 'Холли',
