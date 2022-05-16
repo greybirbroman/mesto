@@ -29,12 +29,16 @@ export class Card {
     cardElementSelector.likeButton.classList.toggle('element__like-button_type_active');
   }
 
+  _handleRemove() {
+    this._element.remove();
+  }
+
   _setEventListeners = (cardElementSelector) => {
     cardElementSelector.image.addEventListener('click', () => {
       this._handleOpenPopup(popupViewCard);
     });
     cardElementSelector.deliteButton.addEventListener('click', () => {
-      this._element.remove();
+      this._handleRemove();
     });
     cardElementSelector.likeButton.addEventListener('click', () => {
       this._toggleLike(cardElementSelector);

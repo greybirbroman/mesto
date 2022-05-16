@@ -39,6 +39,10 @@ const config = {
 const formEditProfileValidator = new FormValidator(config, formEditProfile);
 const formAddContentValidator = new FormValidator(config, formAddContent);
 
+// ON VALIDATION
+formEditProfileValidator.enableValidation();
+formAddContentValidator.enableValidation();
+
 function render() {
   for (const data of items) {
     const card = createContent(data);
@@ -52,12 +56,10 @@ function createContent(data) {
 
 function openAddContentPopup() {
   openPopup(popupAdd);
-  formAddContentValidator.enableValidation();
 }
 
 function openEditPopup() {
   openPopup(popupEdit);
-  formEditProfileValidator.enableValidation();
   nameInput.value = profileName.textContent;
   jobInput.value = profileActivity.textContent;
 }
@@ -72,8 +74,6 @@ function handleProfileFormSubmit(evt) {
 }
 
 // POPUP ADD CARD SUBMIT FUNCTION 
-
-// При множественном нажатии на Submit при закрытии Popup добавляется много карточек. Не получилось устранить проблему.
 
 function handleAddContentFormSubmit(evt) {
   evt.preventDefault();

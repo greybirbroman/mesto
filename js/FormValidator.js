@@ -59,7 +59,7 @@ export class FormValidator {
     });
   }
 
-  // При вызове формы отчищаю форму, ошибки и блокирую submit
+  // При вызове формы очищаю форму, ошибки и блокирую submit
 
   setInitialSatate() {
     this._inputList.forEach((input) => {
