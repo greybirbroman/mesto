@@ -1,6 +1,7 @@
 import { items } from './items.js';
 import { Card } from './Card.js';
 import { FormValidator } from './FormValidator.js';
+import { Section } from './Section.js';
 
 
 
