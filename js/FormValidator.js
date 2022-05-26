@@ -9,8 +9,10 @@ export class FormValidator {
     this._submitDisabled = config.inactiveButtonClass;
     this._inputError = config.inputError;
     this._selectorError = config.selectorError;
+    //this._spanError = config.spanSelector;
     this._inputList = Array.from(this._formElement.querySelectorAll(this._config.inputSelector)); // Массив чтобы пройти методом Some
   }
+
 
 
   _checkInputValidity = (input) => {
@@ -41,7 +43,7 @@ export class FormValidator {
     errorElement.textContent = '';
   }
 
-  _toggleButtonState() {
+  _toggleButtonState = () => {
     if (this._hasInvalidInput()) {
       this._submitButton.disabled = true;
       this._submitButton.classList.add(this._submitDisabled);
@@ -52,16 +54,16 @@ export class FormValidator {
   }
 
 
-  _setEventListeners(input) {
+  _setEventListeners = (input) => {
     input.addEventListener('input', () => {
-      this._toggleButtonState();
       this._checkInputValidity(input);
+      this._toggleButtonState();
     });
   }
 
   // При вызове формы очищаю форму, ошибки и блокирую submit
 
-  setInitialSatate() {
+  setInitialSatate = () => {
     this._inputList.forEach((input) => {
       this._hideInputError(input);
     });
