@@ -45,12 +45,12 @@
         <fieldset class="popup__fieldset">
           <label class="popup__input-label">
             <input required id="name-input" type="text" placeholder="Как Вас зовут?"
-              class="popup__input popup__input_place_name" minlength="2" maxlength="40">
+              class="popup__input popup__input_place_name" minlength="2" maxlength="40" name="user">
             <span class="popup__input-error" id="name-input-error"></span>
           </label>
           <label class="popup__input-label">
             <input required id="job-input" type="text" placeholder="О себе" class="popup__input popup__input_place_job"
-              minlength="2" maxlength="200">
+              minlength="2" maxlength="200" name="job">
             <span class="popup__input-error" id="job-input-error"></span>
           </label>
           <button type="submit" class="popup__submit">Сохранить</button>
@@ -67,12 +67,12 @@
         <fieldset class="popup__fieldset">
           <label class="popup__input-label">
             <input required id="title-input" type="text" placeholder="Название"
-              class="popup__input popup__input_place_title" minlength="2" maxlength="30">
+              class="popup__input popup__input_place_title" minlength="2" maxlength="30" name="title">
             <span class="popup__input-error" id="title-input-error"></span>
           </label>
           <label class="popup__input-label">
             <input required id="link-input" type="url" placeholder="Ссылка на картинку"
-              class="popup__input popup__input_place_link">
+              class="popup__input popup__input_place_link" name="link">
             <span class="popup__input-error" id="link-input-error"></span>
           </label>
           <button type="submit" class="popup__submit popup__submit_type_add">Создать</button>

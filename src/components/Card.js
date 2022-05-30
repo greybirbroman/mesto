@@ -1,5 +1,5 @@
-export class Card {
-  constructor(data, templateSelector, handleCardPreview) {
+export default class Card {
+  constructor({data, handleCardPreview}, templateSelector) {
     this._name = data.name
     this._link = data.link;
     this._element = this._getTemplate(templateSelector);
@@ -37,7 +37,7 @@ export class Card {
     });
   };
 
-  _generateCard() {
+  _generateCard = () => {
 
     const cardElementSelector = {
       image: this._element.querySelector('.element__image'),

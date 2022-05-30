@@ -1,11 +1,11 @@
-import { Popup } from "./Popup"
+import Popup from './Popup.js';
 
-export class PopupWithForm extends Popup {
-  constructor(popupSelector, handleAddContentFormSubmit) {
+export default class PopupWithForm extends Popup {
+  constructor({ popupSelector, handleFormSubmit }) {
     super(popupSelector)
     this._formSelector = this._popup.querySelector('.popup__form')
     this._inputList = Array.from(this._formSelector.querySelectorAll('.popup__input'))
-    this._handleAddContentFormSubmit = handleAddContentFormSubmit
+    this._handleFormSubmit = handleFormSubmit
   }
 
   _clearInputs() {
@@ -14,7 +14,7 @@ export class PopupWithForm extends Popup {
     })
   }
 
-  _getInputValues () {
+  _getInputValues = () => {
     const inputValues = {}
     this._inputList.forEach((input) => {
       inputValues[input.name] = input.value
@@ -22,22 +22,26 @@ export class PopupWithForm extends Popup {
     return inputValues
   }
 
-  setEventListeners () {
+  setEventListeners() {
     super.setEventListeners()
     this._popup.addEventListener('submit', (evt) => {
       evt.preventDefault()
-      this._handleAddContentFormSubmit(this._getInputValues())
+      this._handleFormSubmit(this._getInputValues())
     })
   }
 
-  open(values = {}) {
+  open (values = {}) {
     this._inputList.forEach((input) => {
       input.value = values[input.name] || '';
     })
     super.open()
   }
 
-  close () {
+  // open() {
+  //   super.open()
+  // }
+
+  close() {
     super.close()
     this._clearInputs()
   }
