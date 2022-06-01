@@ -1,10 +1,11 @@
+import './index.css';
 import { items } from '../utils/items.js';
 import Card from '../components/Card.js';
-import FormValidator from './FormValidator.js';
-import Section from './Section.js';
-import PopupWithImage from './PopupWithImage.js';
-import PopupWithForm from './PopupWithForm.js';
-import UserInfo from './UserInfo.js';
+import FormValidator from '../components/FormValidator.js';
+import Section from '../components/Section.js';
+import PopupWithImage from '../components/PopupWithImage';
+import PopupWithForm from '../components/PopupWithForm';
+import UserInfo from '../components/UserInfo';
 
 
 // POPUP
@@ -18,8 +19,8 @@ const formAddContent = document.querySelector('.popup__form_type_submit');
 // CONST
 const nameInput = document.querySelector('[name="user"]'); // Инпут Name
 const jobInput = document.querySelector('[name="job"]'); // Инпут Job
-const inputTitle = document.querySelector('[name="title"]') // Инпут Title
-const inputLink = document.querySelector('[name="link"]'); // Инпут Link
+//const inputTitle = document.querySelector('[name="title"]') // Инпут Title
+//const inputLink = document.querySelector('[name="link"]'); // Инпут Link
 const profileEditBtn = document.querySelector('.profile__edit-button'); // Кнопка Edit
 const cardAddBtn = document.querySelector('.profile__add-button'); // Кнопка Add Content
 
@@ -98,16 +99,6 @@ const popupEditProfile = new PopupWithForm({
 })
 popupEditProfile.setEventListeners()
 
-function addUserInfo({user, job}) {
-  nameInput.value = user
-  jobInput.value = job
-}
-
-const userInfo = new UserInfo({
-  user: '.profile__name',
-  job: '.profile__activity',
-})
-
 profileEditBtn.addEventListener('click', () => {
   formEditProfileValidator.setInitialSatate()
   const info = userInfo.getUserInfo()
@@ -117,3 +108,13 @@ profileEditBtn.addEventListener('click', () => {
   })
   popupEditProfile.open(info)
 });
+
+function addUserInfo({user, job}) {
+  nameInput.value = user
+  jobInput.value = job
+}
+
+const userInfo = new UserInfo({
+  user: '.profile__name',
+  job: '.profile__activity',
+})
