@@ -95,6 +95,7 @@ const popupEditProfile = new PopupWithForm({
       job: data.job,
     })
     popupEditProfile.close()
+    formEditProfileValidator.setInitialSatate()
   }
 })
 popupEditProfile.setEventListeners()
