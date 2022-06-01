@@ -1,10 +1,9 @@
-import { popupViewCard, popupImage, popupAlt, openPopup } from "./utils.js";
-
-export class Card {
-  constructor(data, templateSelector) {
+export default class Card {
+  constructor({data, handleCardPreview}, templateSelector) {
     this._name = data.name
     this._link = data.link;
     this._element = this._getTemplate(templateSelector);
+    this._handleCardPreview = handleCardPreview;
     this._generateCard();
   }
 
@@ -18,24 +17,17 @@ export class Card {
     return templateElement;
   }
 
-  _handleOpenPopup(popupViewCard) {
-    popupImage.src = this._link;
-    popupImage.alt = this._name;
-    popupAlt.textContent = this._name;
-    openPopup(popupViewCard);
-  }
-
-  _toggleLike(cardElementSelector) {
+  _toggleLike = (cardElementSelector) => {
     cardElementSelector.likeButton.classList.toggle('element__like-button_type_active');
   }
 
-  _handleRemove() {
+  _handleRemove = () => {
     this._element.remove();
   }
 
   _setEventListeners = (cardElementSelector) => {
     cardElementSelector.image.addEventListener('click', () => {
-      this._handleOpenPopup(popupViewCard);
+      this._handleCardPreview(this._name, this._link);
     });
     cardElementSelector.deliteButton.addEventListener('click', () => {
       this._handleRemove();
@@ -45,7 +37,7 @@ export class Card {
     });
   };
 
-  _generateCard() {
+  _generateCard = () => {
 
     const cardElementSelector = {
       image: this._element.querySelector('.element__image'),

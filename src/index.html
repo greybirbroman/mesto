@@ -5,19 +5,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./pages/index.css">
+  <!-- <link rel="stylesheet" href="./pages/index.css"> -->
   <title>mesto</title>
 </head>
 
 <body class="body">
   <div class="page">
     <header class="header">
-      <img class="header__logo" src="./images/mesto_logo.svg" alt="Лого Место">
+      <img class="header__logo" src="<%=require('./images/mesto_logo.svg')%>" alt="Лого Место">
     </header>
     <main class="content">
       <section class="profile">
         <div class="profile__person">
-          <img class="profile__avatar" src="./images/MichaelScott.png" alt="Картинка профиля">
+          <img class="profile__avatar" src="<%=require('./images/MichaelScott.png')%>" alt="Картинка профиля">
           <div class="profile__info">
             <div class="profile__container">
               <h1 class="profile__name">Michael Scott</h1>
@@ -45,12 +45,12 @@
         <fieldset class="popup__fieldset">
           <label class="popup__input-label">
             <input required id="name-input" type="text" placeholder="Как Вас зовут?"
-              class="popup__input popup__input_place_name" minlength="2" maxlength="40">
+              class="popup__input popup__input_place_name" minlength="2" maxlength="40" name="user">
             <span class="popup__input-error" id="name-input-error"></span>
           </label>
           <label class="popup__input-label">
             <input required id="job-input" type="text" placeholder="О себе" class="popup__input popup__input_place_job"
-              minlength="2" maxlength="200">
+              minlength="2" maxlength="200" name="job">
             <span class="popup__input-error" id="job-input-error"></span>
           </label>
           <button type="submit" class="popup__submit">Сохранить</button>
@@ -67,12 +67,12 @@
         <fieldset class="popup__fieldset">
           <label class="popup__input-label">
             <input required id="title-input" type="text" placeholder="Название"
-              class="popup__input popup__input_place_title" minlength="2" maxlength="30">
+              class="popup__input popup__input_place_title" minlength="2" maxlength="30" name="title">
             <span class="popup__input-error" id="title-input-error"></span>
           </label>
           <label class="popup__input-label">
             <input required id="link-input" type="url" placeholder="Ссылка на картинку"
-              class="popup__input popup__input_place_link">
+              class="popup__input popup__input_place_link" name="link">
             <span class="popup__input-error" id="link-input-error"></span>
           </label>
           <button type="submit" class="popup__submit popup__submit_type_add">Создать</button>
@@ -100,7 +100,7 @@
       </div>
     </li>
   </template>
-  <script type="module" src="./js/index.js"></script>
+  <!-- <script type="module" src="./js/index.js"></script> -->
 </body>
 
 </html>
