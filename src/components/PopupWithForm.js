@@ -31,10 +31,10 @@ export default class PopupWithForm extends Popup {
   }
 
   open (values = {}) {
+    super.open()
     this._inputList.forEach((input) => {
       input.value = values[input.name] || '';
     })
-    super.open()
   }
 
   // open() {
