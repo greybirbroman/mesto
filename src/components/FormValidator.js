@@ -43,7 +43,7 @@ export default class FormValidator {
     errorElement.textContent = '';
   }
 
-  _toggleButtonState = () => {
+  _toggleButtonState() {
     if (this._hasInvalidInput()) {
       this._submitButton.disabled = true;
       this._submitButton.classList.add(this._submitDisabled);
@@ -53,8 +53,7 @@ export default class FormValidator {
     }
   }
 
-
-  _setEventListeners = (input) => {
+  _setEventListeners(input) {
     input.addEventListener('input', () => {
       this._checkInputValidity(input);
       this._toggleButtonState();
@@ -63,14 +62,13 @@ export default class FormValidator {
 
   // При вызове формы очищаю форму, ошибки и блокирую submit
 
-  setInitialSatate = () => {
+  setInitialSatate() {
     this._inputList.forEach((input) => {
       this._hideInputError(input);
     });
     this._toggleButtonState();
     this._formElement.reset();
   };
-
 
   enableValidation() {
     for (this._fieldsetSelector of this._inputList) {
