@@ -19,7 +19,6 @@ import { data } from 'autoprefixer';
 const formEditProfile = document.querySelector('.popup__form_type_edit');
 const formAddContent = document.querySelector('.popup__form_type_submit');
 const formChangeAvatar = document.querySelector('.popup__form_type_avatar');
-const formConfirm = document.querySelector('.popup__form_type_confirm');
 
 // CONST
 
@@ -168,8 +167,8 @@ popupEditProfile.setEventListeners()
 
 profileEditBtn.addEventListener('click', () => {
   formEditProfileValidator.setInitialSatate()
-  const currentInfo = userInfo.getUserInfo()
-  popupEditProfile.open(currentInfo)
+  const currentUserInfo = userInfo.getUserInfo()
+  popupEditProfile.open(currentUserInfo)
 });
 
 const cardsList = new Section({
@@ -183,9 +182,11 @@ const createContent = (data) => {
   const card = new Card({
     data: data,
     userId: userInfo.getUserID(),
+    // Просмотр карточки
     handleCardPreview: () => {
       popupViewCard.open(data)
     },
+    // Поставить лайк
     handleAddLike: () => {
       api.likeCard(card.getCardId())
         .then((data) => {
@@ -196,6 +197,7 @@ const createContent = (data) => {
           console.log(message)
         })
     },
+    // Удалить карточку
     handleDeliteCard: () => {
       popupConfirm.open()
       popupConfirm.setSubmitEvent(() => {
@@ -214,6 +216,7 @@ const createContent = (data) => {
           })
       })
     },
+    // Убрать лайк
     handleRemoveLike: () => {
       api.unlikeCard(card.getCardId())
         .then((data) => {
