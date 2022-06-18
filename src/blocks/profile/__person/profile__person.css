@@ -8,7 +8,6 @@
   background-image: url(../../../images/edit-button.svg);
   background-size: 25px;
   background-repeat: no-repeat;
-  border-radius: 60px;
 }
 
 .profile__person:hover {
