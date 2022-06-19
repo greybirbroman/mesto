@@ -33,9 +33,17 @@ export default class Card {
   }
   // Прокинем через слушатель в CARD -> DELETE
   handleRemove = () => {
-    this._element.remove();
+    this._element.remove()
     this._element = null
   }
+
+  // _checkLikeState() {
+  //   if (this._likeButton.classList.contains('element__like-button_type_active')) {
+  //     this._handleRemoveLike(this._id)
+  //   } else {
+  //     this._handleAddLike(this._id)
+  //   }
+  // }
 
   _checkLikeState() {
     if (this._likeButton.classList.contains('element__like-button_type_active')) {
@@ -47,7 +55,7 @@ export default class Card {
 
   _checkDeliteState() {
     if (this._owner !== this._userId) {
-      this._deliteButton.remove();
+      this._deliteButton.remove()
     }
   }
 
@@ -61,13 +69,13 @@ export default class Card {
 
   _setEventListeners() {
     this._image.addEventListener('click', () => {
-      this._handleCardPreview();
+      this._handleCardPreview()
     });
     this._deliteButton.addEventListener('click', () => {
-      this._handleDeliteCard();
+      this._handleDeliteCard()
     });
     this._likeButton.addEventListener('click', () => {
-      this._checkLikeState();
+      this._checkLikeState()
     });
   };
 
@@ -87,10 +95,10 @@ export default class Card {
     this._likeCounter.textContent = this._likes.length
     this._deliteButton = this._element.querySelector('.element__delite-button')
 
-    this._setEventListeners();
-    this._checkDeliteState();
-    this._isLiked();
+    this._setEventListeners()
+    this._checkDeliteState()
+    this._isLiked()
 
-    return this._element;
+    return this._element
   }
 }

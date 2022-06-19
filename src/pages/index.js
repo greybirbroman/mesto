@@ -1,5 +1,14 @@
 import './index.css';
-import { items } from '../utils/items.js';
+import {
+  formEditProfile,
+  formAddContent,
+  formChangeAvatar,
+  avatar,
+  avatarChangeBtn,
+  profileEditBtn,
+  cardAddBtn,
+  config,
+} from '../utils/constants.js'
 import Api from '../components/Api.js';
 import Card from '../components/Card.js';
 import FormValidator from '../components/FormValidator.js';
@@ -9,36 +18,6 @@ import PopupWithForm from '../components/PopupWithForm.js';
 import PopupWithConfirm from '../components/PopupWithConfirm.js';
 import UserInfo from '../components/UserInfo.js';
 import { data } from 'autoprefixer';
-
-
-// POPUP
-//const popupEdit = document.querySelector('.popup_type_edit');
-//const popupAdd = document.querySelector('.popup_type_add');
-
-// POPUP FORMS
-const formEditProfile = document.querySelector('.popup__form_type_edit');
-const formAddContent = document.querySelector('.popup__form_type_submit');
-const formChangeAvatar = document.querySelector('.popup__form_type_avatar');
-
-// CONST
-
-const avatar = document.querySelector('.profile__avatar');
-const avatarChangeBtn = document.querySelector('.profile__person');
-const profileEditBtn = document.querySelector('.profile__edit-button');
-const cardAddBtn = document.querySelector('.profile__add-button');
-
-// VALIDATION Config
-const config = {
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__submit',
-  submitButtonErrorSelector: '.popup__submit_type_error',
-  fieldsetSelector: '.popup__fieldset',
-  inactiveButtonClass: 'popup__submit_type_disabled',
-  inputError: 'popup__input-error_active',
-  selectorError: 'popup__input_type_error',
-  spanSelector: 'popup__input-error',
-};
 
 // ON VALIDATION
 
