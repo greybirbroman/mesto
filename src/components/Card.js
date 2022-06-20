@@ -37,14 +37,6 @@ export default class Card {
     this._element = null
   }
 
-  // _checkLikeState() {
-  //   if (this._likeButton.classList.contains('element__like-button_type_active')) {
-  //     this._handleRemoveLike(this._id)
-  //   } else {
-  //     this._handleAddLike(this._id)
-  //   }
-  // }
-
   _checkLikeState() {
     if (this._likeButton.classList.contains('element__like-button_type_active')) {
       this._handleRemoveLike(this._id)
@@ -88,8 +80,7 @@ export default class Card {
     this._image.alt = this._name
     
 
-    this._name = this._element.querySelector('.element__name').textContent = this._name
-
+    this._element.querySelector('.element__name').textContent = this._name
     this._likeButton = this._element.querySelector('.element__like-button')
     this._likeCounter = this._element.querySelector('.element__like-button-counter')
     this._likeCounter.textContent = this._likes.length

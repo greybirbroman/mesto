@@ -58,6 +58,7 @@ export default class FormValidator {
       this._checkInputValidity(input);
       this._toggleButtonState();
     });
+    this._toggleButtonState();
   }
 
   // При вызове формы очищаю форму, ошибки и блокирую submit
@@ -66,8 +67,8 @@ export default class FormValidator {
     this._inputList.forEach((input) => {
       this._hideInputError(input);
     });
-    this._toggleButtonState();
     this._formElement.reset();
+    this._toggleButtonState();
   };
 
   enableValidation() {

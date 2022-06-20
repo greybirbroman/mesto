@@ -3,7 +3,6 @@ import {
   formEditProfile,
   formAddContent,
   formChangeAvatar,
-  avatar,
   avatarChangeBtn,
   profileEditBtn,
   cardAddBtn,
@@ -75,10 +74,9 @@ const popupAvatar = new PopupWithForm({
   popupSelector: '.popup_type_avatar',
   handleFormSubmit: (data) => {
     popupAvatar.loading(true)
-    formChangeAvatarValidator.setInitialSatate()
     api.patchNewAvatar(data)
       .then((data) => {
-        avatar.src = data.avatar
+        userInfo.setUserInfo(data)
         popupAvatar.close()
       })
       .catch((err) => {
@@ -94,15 +92,14 @@ popupAvatar.setEventListeners();
 
 avatarChangeBtn.addEventListener('click', () => {
   formChangeAvatarValidator.setInitialSatate()
-  const currentAvatarData = userInfo.getUserInfo()
-  popupAvatar.open(currentAvatarData)
+  popupAvatar.open()
 })
 
 const popupAddContent = new PopupWithForm({
   popupSelector: '.popup_type_add',
   handleFormSubmit: (data) => {
     popupAddContent.loading(true)
-    formAddContentValidator.setInitialSatate();
+    //formAddContentValidator.setInitialSatate();  // Иначе добавляется много картинок при многократном submit
     api.postNewCard(data)
       .then((data) => {
         cardsList.addItemTop(createContent(data))

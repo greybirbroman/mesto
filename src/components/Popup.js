@@ -19,10 +19,8 @@ export default class Popup {
   }
 
   close () {
-    if(this._popup.classList.contains('popup_open')) {
       this._popup.classList.remove('popup_open')
       document.removeEventListener('keydown', this._handleEscClose)
-    }
   }
 
   setEventListeners () {

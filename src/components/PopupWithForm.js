@@ -3,16 +3,10 @@ import Popup from './Popup.js';
 export default class PopupWithForm extends Popup {
   constructor({ popupSelector, handleFormSubmit }) {
     super(popupSelector)
-    this._formSelector = this._popup.querySelector('.popup__form')
-    this._inputList = Array.from(this._formSelector.querySelectorAll('.popup__input'))
-    this._submitBtn = this._formSelector.querySelector('.popup__submit')
+    this._form = this._popup.querySelector('.popup__form')
+    this._inputList = Array.from(this._form.querySelectorAll('.popup__input'))
+    this._submitBtn = this._form.querySelector('.popup__submit')
     this._handleFormSubmit = handleFormSubmit
-  }
-
-  _clearInputs() {
-    this._inputList.forEach((input) => {
-      input.value = ''
-    })
   }
 
   _getInputValues = () => {
@@ -44,7 +38,6 @@ export default class PopupWithForm extends Popup {
 
   close() {
     super.close()
-    this._clearInputs()
   }
 
   loading(status) {
