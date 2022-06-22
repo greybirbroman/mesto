@@ -14,6 +14,11 @@ export default class UserInfo {
     }
     return userInfo
   }
+
+  /**
+   * Обьект с данными пользователя для установки
+   * @param {data = {data.name, data.about, data.avatar, data._id}}
+   */
   setUserInfo (data) {
     this._user.textContent = data.name
     this._job.textContent = data.about

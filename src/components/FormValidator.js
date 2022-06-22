@@ -54,21 +54,21 @@ export default class FormValidator {
   }
 
   _setEventListeners(input) {
+    this._toggleButtonState();
+    
     input.addEventListener('input', () => {
       this._checkInputValidity(input);
       this._toggleButtonState();
     });
-    this._toggleButtonState();
   }
 
   // При вызове формы очищаю форму, ошибки и блокирую submit
 
   setInitialSatate() {
+    this._toggleButtonState();
     this._inputList.forEach((input) => {
       this._hideInputError(input);
     });
-    this._formElement.reset();
-    this._toggleButtonState();
   };
 
   enableValidation() {
