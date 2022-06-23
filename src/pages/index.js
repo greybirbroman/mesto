@@ -28,9 +28,9 @@ formAddContentValidator.enableValidation();
 formChangeAvatarValidator.enableValidation();
 
 const userInfo = new UserInfo({
-  user: '.profile__name',
-  job: '.profile__activity',
-  avatar: '.profile__avatar',
+  userSelector: '.profile__name',
+  jobSelector: '.profile__activity',
+  avatarSelector: '.profile__avatar',
 })
 
 const api = new Api({
@@ -143,8 +143,7 @@ popupEditProfile.setEventListeners()
 
 profileEditBtn.addEventListener('click', () => {
   formEditProfileValidator.setInitialSatate()
-  const currentUserInfo = userInfo.getUserInfo()
-  popupEditProfile.open(currentUserInfo)
+  popupEditProfile.open(userInfo.getUserInfo())
 });
 
 const cardsList = new Section({

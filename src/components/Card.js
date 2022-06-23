@@ -25,14 +25,24 @@ export default class Card {
     return this._id
   }
 
-  //Прокинем через слушатель в CARD -> LIKE
-  toggleLikeEvent (data) {
+  // Прячу страшный ноль 8)
+  _hideLike() {
+    if(this._likes.length === 0)
+    this._likeCounter.textContent = ''
+  }
+
+  /**
+   * 
+   * @param {[likes]} data 
+   */
+  toggleLikeEvent(data) {
     this._likeButton.classList.toggle('element__like-button_type_active');
     this._likes = data.likes
     this._likeCounter.textContent = this._likes.length
+    this._hideLike()
   }
-  // Прокинем через слушатель в CARD -> DELETE
-  handleRemove = () => {
+  
+  handleRemove() {
     this._element.remove()
     this._element = null
   }
@@ -89,6 +99,7 @@ export default class Card {
     this._setEventListeners()
     this._checkDeliteState()
     this._isLiked()
+    this._hideLike()
 
     return this._element
   }
